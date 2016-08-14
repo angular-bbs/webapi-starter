@@ -20,7 +20,13 @@ namespace Webapi_starter
             
             var host = new WebHostBuilder()
                 .UseConfiguration(config)
-                .UseKestrel()
+                .UseKestrel(o =>
+                {
+                    o.UseHttps(
+                        Path.Combine(new DirectoryInfo(Directory.GetCurrentDirectory()).FullName, "SSLCertificate.pfx"),
+                        "Passw0rd");
+                })
+                .UseUrls("http://127.0.0.1:5000", "https://127.0.0.1:44396")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

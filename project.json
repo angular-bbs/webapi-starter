@@ -77,5 +77,6 @@
 
   "tooling": {
     "defaultNamespace": "Webapi_starter"
-  }
+  },
+  "userSecretsId": "aspnet-webapi-starter-20160814035018"
 }
