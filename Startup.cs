@@ -67,7 +67,7 @@ namespace Webapi_starter
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            app.UseCors("AllowCorsOrigin");
             app.UseMvc();
         }
     }
