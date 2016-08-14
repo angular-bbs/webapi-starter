@@ -42,6 +42,9 @@ namespace Webapi_starter
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(
+                identityOptions => { identityOptions.Cookies.ApplicationCookie.AutomaticChallenge = false; });
             // Add framework services.
             services.AddAuthorization();
             services.AddMvc();
