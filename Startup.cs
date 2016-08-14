@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using WebapiStarter.Consts;
 using WebapiStarter.Data;
 using WebapiStarter.Models;
 
@@ -46,6 +47,14 @@ namespace Webapi_starter
             services.Configure<IdentityOptions>(
                 identityOptions => { identityOptions.Cookies.ApplicationCookie.AutomaticChallenge = false; });
             // Add framework services.
+            services.AddCors(
+                options =>
+                    options.AddPolicy("AllowCorsOrigin",
+                        builder =>
+                            builder.WithOrigins(ClientConsts.BaseAddress)
+                                .AllowAnyMethod()
+                                .AllowAnyHeader()
+                                .AllowCredentials()));
             services.AddAuthorization();
             services.AddMvc();
         }
