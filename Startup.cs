@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +15,7 @@ using WebapiStarter.Consts;
 using WebapiStarter.Data;
 using WebapiStarter.GitHub;
 using WebapiStarter.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Webapi_starter
 {
@@ -69,6 +72,27 @@ namespace Webapi_starter
             loggerFactory.AddDebug();
             app.UseCors("AllowCorsOrigin");
             app.UseIdentity();
+            app.UseExceptionHandler(errorApp =>
+            {
+                errorApp.Run(async context =>
+                {
+                    context.Response.StatusCode = 500; // or another Status accordingly to Exception Type
+                    context.Response.ContentType = "application/json";
+
+                    var error = context.Features.Get<IExceptionHandlerFeature>();
+                    if (error != null)
+                    {
+                        var ex = error.Error;
+
+                        await context.Response.WriteAsync(new ErrorDto
+                        {
+                            Code = 400,
+                            Message = ex.Message // or your custom message
+                            // other custom data
+                        }.ToString(), Encoding.UTF8);
+                    }
+                });
+            });
             app.UseMvc();
         }
     }
