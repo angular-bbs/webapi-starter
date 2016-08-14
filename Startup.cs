@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using WebapiStarter.Consts;
 using WebapiStarter.Data;
+using WebapiStarter.GitHub;
 using WebapiStarter.Models;
 
 namespace Webapi_starter
@@ -30,6 +31,8 @@ namespace Webapi_starter
             }
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+            GithubConfig.ClientId = Configuration["GitHub:ClientId"];
+            GithubConfig.Secret = Configuration["GitHub:ClientSecret"];
         }
 
         public IConfigurationRoot Configuration { get; }
