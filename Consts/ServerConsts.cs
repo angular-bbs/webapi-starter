@@ -19,6 +19,7 @@ namespace WebapiStarter.Consts
             public const string ForgetPasswordEndpoint = "forgot-password";
             public const string ResetPasswordEndpoint = "reset-password";
             public const string ChangePasswordEndpoint = "change-password";
+            public const string CheckStatusEndpoint = "check-status";
         }
         
 

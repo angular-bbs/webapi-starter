@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -63,6 +64,8 @@ namespace Webapi_starter
                                 .AllowCredentials()));
             services.AddAuthorization();
             services.AddMvc();
+
+            services.AddTransient<HttpClient, HttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
