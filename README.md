@@ -1,6 +1,6 @@
 # Webapi Starter Kit
 
-This is a seed for Dotnet Core Webapi server. It can be tested with [github-client](https://github.com/angular-bbs/github-client) repository. 
+This is a seed for Dotnet Core Webapi server. To see how it works in action, try out our [github-client](https://github.com/angular-bbs/github-client) repository. 
 
 ## Features:
 
@@ -37,3 +37,5 @@ Database type is SQLLite
 # Test Client
 
 Please see repository [Github-client](https://github.com/angular-bbs/github-client), it is an Angular-cli generated project with Angular 2 RC5. Interface is made up with Semantic-ui and ng-semantic.
+
+Note: replace the ClientId with your own clientId in the [Github-client](https://github.com/angular-bbs/github-client).
