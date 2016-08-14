@@ -19,6 +19,11 @@ namespace Webapi_starter
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+            if (env.IsEnvironment("Development"))
+            {
+                builder.AddUserSecrets();
+            }
+            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
