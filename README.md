@@ -19,13 +19,17 @@ Database type is SQLLite
     * Recover Password: `api/account/forgot-password` and `api/account/reset-password`
 
 # Usage
-1. Login in your github account: `Settings` -> `OAuth applications` -> `Developer applications`, register a new application:
+1. Register an OAuth application on github: Login in your github account: `Settings` -> `OAuth applications` -> `Developer applications`, register a new application:
     * Call back url: `http://localhost:4200/user-center/login-github`    *
-1. follow [Dotnet Core official document](https://docs.asp.net/en/latest/security/app-secrets.html), add your secret acquired from previous step.
-1. Go to the project folder, run the following commands:
+1. Add your secret: follow the [Safe storage of app secrets during development](https://docs.asp.net/en/latest/security/app-secrets.html), add your secret acquired from previous step.
+1. Get the Webapi server running: in the project directory, run the following commands:
     ```
     dotnet restore
+    ```
+    ```
     dotnet ef database update
+    ```
+    ```
     dotnet watch run
     ```
 1. The should be running and listening to port 5000(http) and 44396(https). Both 127.0.0.1 and localhost are working.
