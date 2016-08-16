@@ -20,7 +20,7 @@ Database type is SQLLite
 
 # Usage
 1. Register an OAuth application on github: Login in your github account: `Settings` -> `OAuth applications` -> `Developer applications`, register a new application:
-    * Call back url: `http://localhost:4200/user-center/login-github`    *
+    * Call back url: `http://localhost:4200/user-center/login-github`
 1. Add your secret: follow the [Safe storage of app secrets during development](https://docs.asp.net/en/latest/security/app-secrets.html), add your secret acquired from previous step.
 1. Get the Webapi server running: in the project directory, run the following commands:
     ```
