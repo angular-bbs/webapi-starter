@@ -240,6 +240,12 @@ D:\Projects\webapi-starter\Identity.Server\Configurations\IdentityServerUserClai
 D:\Projects\webapi-starter\Identity.Server\Configurations\ProfileService.cs
 D:\Projects\webapi-starter\Identity.Server\Configurations\ResourceOwnerPasswordValidator.cs
 D:\Projects\webapi-starter\Identity.Server\Configurations\Scopes.cs
+D:\Projects\webapi-starter\Identity.Server\Controller\AccountController.cs
 D:\Projects\webapi-starter\Identity.Server\Data\ApplicationDbContext.cs
 D:\Projects\webapi-starter\Identity.Server\Models\ApplicationUser.cs
+D:\Projects\webapi-starter\Identity.Server\Models\ChangePasswordViewModel.cs
 D:\Projects\webapi-starter\Identity.Server\Models\ClientConsts.cs
+D:\Projects\webapi-starter\Identity.Server\Models\CreatePasswordViewModel.cs
+D:\Projects\webapi-starter\Identity.Server\Models\ForgotPasswordViewModel.cs
+D:\Projects\webapi-starter\Identity.Server\Models\ResetPasswordViewModel.cs
+D:\Projects\webapi-starter\Identity.Server\Models\ServerConsts.cs
