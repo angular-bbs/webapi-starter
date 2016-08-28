@@ -11,6 +11,7 @@
             public const string ResetPasswordEndpoint = "reset-password";
             public const string ChangePasswordEndpoint = "change-password";
             public const string RegisterEndpoint = "register";
+            public const string CreatePasswordEndpoint = "create-password";
         }
     }
 }

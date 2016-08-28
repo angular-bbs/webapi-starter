@@ -12,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Identity = IdentityModel.Identity;
 
 namespace Identity.Server
 {
@@ -54,7 +53,12 @@ namespace Identity.Server
             }
 
             app.UseIdentity();
-
+            app.UseJwtBearerAuthentication(new JwtBearerOptions
+            {
+                Authority = "http://localhost:52338",
+                Audience = "http://localhost:52338/",
+                RequireHttpsMetadata = false
+            });
             app.UseMvc();
         }
 
